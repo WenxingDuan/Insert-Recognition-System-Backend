@@ -2,6 +2,7 @@ from flask import request, make_response, Flask
 import os
 import json
 import socket
+import sys
 
 os.system('')
 app = Flask(__name__)
@@ -26,15 +27,16 @@ def imageList(name):
         return returnJson
 
 
-
 @app.route('/predict', methods=['POST'])
 def upload():
     theFile = request.files.get('file')
-    theName = request.data.get('fileName')
-    theType = request.data.get('fileType')
-    if theFile is None:
-        return "Error, none has been upload"
-    theFile.save(os.getcwd() + "storeImg\\file.jpg")
+    # print(theFile.filename, file=sys.stderr)
+    # print(type(theFile), file=sys.stderr)
+
+    theName = theFile.filename
+    # if theFile is None:
+    #     return "Error, none has been upload"
+    # theFile.save(os.getcwd() + "storeImg\\" + theName)
     return ("success")
 
 
