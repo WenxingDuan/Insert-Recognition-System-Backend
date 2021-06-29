@@ -28,8 +28,9 @@ def imageList(name):
         return returnJson
 
 
-@app.route('/predict', methods=['POST','GET'])
+@app.route('/predict', methods=['POST'])
 def upload():
+
     theFile = request.files.get('file')
     # print(theFile.filename, file=sys.stderr)
     # print(type(theFile), file=sys.stderr)
@@ -40,7 +41,7 @@ def upload():
 
     theFile.save(imgPath)
 
-    specie = pr.predict(imgPath,2,True)
+    specie = pr.predict(imgPath, 2, True)
 
     return (specie)
 

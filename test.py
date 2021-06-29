@@ -1,7 +1,7 @@
 import requests
 import os
 url = 'http://localhost:5000/predict'
-r = requests.get(url, stream=True)
+
 # with open('123.jpg', 'wb') as fd:
 #     for chunk in r.iter_content():
 #         fd.write(chunk)
