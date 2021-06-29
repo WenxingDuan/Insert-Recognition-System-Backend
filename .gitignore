@@ -1,2 +1,13 @@
 /__pycache__/
 /.vscode/
+/predicting_model/__pycache__/
+/predicting_model/.vscode/
+*.jpg
+*.png
+*.jpeg
+*.gif
+*.JPG
+*.PNG
+*.JPEG
+*.GIF
+*.pth

@@ -1,0 +1,105 @@
+=======================================
+=======================================
+=======================================
+物种名：C15331005010, 正确数 3, 错误数 2
+物种名：C15408105005, 正确数 4, 错误数 1
+物种名：C21301095005, 正确数 3, 错误数 0
+物种名：C21701065010, 正确数 31, 错误数 3
+物种名：C21701080005, 正确数 49, 错误数 3
+物种名：C21701445005, 正确数 3, 错误数 2
+物种名：C21703280010, 正确数 4, 错误数 5
+物种名：C22301070005, 正确数 3, 错误数 3
+物种名：C22301090015, 正确数 3, 错误数 2
+物种名：C22341165010, 正确数 4, 错误数 1
+物种名：C22342015005, 正确数 3, 错误数 4
+物种名：C22342135005, 正确数 1, 错误数 9
+物种名：C22345105005, 正确数 2, 错误数 47
+物种名：C22345170045, 正确数 4, 错误数 1
+物种名：C22359050005, 正确数 4, 错误数 1
+=======================================
+=======================================
+=======================================
+错误物种编号：C15331005010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C15331005010\危害状.jpg
+错误物种编号：C15331005010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C15331005010\草履蚧若虫.jpg
+错误物种编号：C15408105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C15408105005\麻皮蝽.jpg
+错误物种编号：C21701065010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701065010\光肩星天牛（雌雄成虫交尾）柳树 沛县.JPG
+错误物种编号：C21701065010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701065010\幼虫.jpg
+错误物种编号：C21701065010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701065010\黄星天牛.jpg
+错误物种编号：C21701080005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701080005\004J460B-0.png
+错误物种编号：C21701080005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701080005\4a8cbf6350ca477ea66a28e9be5cb9b9.jpg
+错误物种编号：C21701080005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701080005\黄星桑天牛.jpg
+错误物种编号：C21701445005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701445005\图91松墨天牛幼虫.jpg
+错误物种编号：C21701445005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21701445005\图92松墨天牛幼虫.png
+错误物种编号：C21703280010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21703280010\549柳蓝叶甲侧视图.jpg
+错误物种编号：C21703280010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21703280010\柳蓝叶甲2.jpg
+错误物种编号：C21703280010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21703280010\柳蓝叶甲幼虫.jpg
+错误物种编号：C21703280010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21703280010\柳蓝叶甲幼虫3.jpg
+错误物种编号：C21703280010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C21703280010\柳蓝叶甲幼虫5.jpg
+错误物种编号：C22301070005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22301070005\黄刺蛾.jpg
+错误物种编号：C22301070005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22301070005\黄刺蛾2.jpg
+错误物种编号：C22301070005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22301070005\黄刺蛾成虫.jpg
+错误物种编号：C22301090015, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22301090015\褐边绿刺蛾.jpg
+错误物种编号：C22301090015, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22301090015\褐边绿刺蛾成虫1.jpg
+错误物种编号：C22341165010, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22341165010\霜天蛾老熟幼虫.jpg
+错误物种编号：C22342015005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342015005\杨扇舟蛾卵.jpg
+错误物种编号：C22342015005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342015005\杨扇舟蛾卵2.jpg
+错误物种编号：C22342015005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342015005\杨扇舟蛾（卵）杨树 江苏省沛县.JPG
+错误物种编号：C22342015005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342015005\杨扇舟蛾（幼虫）杨树 江苏省沛县.JPG
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\426杨小舟蛾.jpg
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\卵.jpg
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\幼.jpg
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\幼虫.jpg
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\杨小舟蛾.JPG
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\杨小舟蛾卵块.jpg
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\杨小舟蛾赤眼蜂寄生的卵块.jpg
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\杨小舟蛾（成虫）杨树 沛县鹿楼.JPG
+错误物种编号：C22342135005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22342135005\蛹.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\114美国白蛾.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（1代1龄幼虫）－樱花－江苏淮安淮城镇－20160516－赵永昂.jpg.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（7龄幼虫）－杨树－江苏淮安三堡乡－20160628－赵永昂.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160608_154733－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160608_155700－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160617_152307－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160617_152609－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160726_093937－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160726_094004－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160726_094047－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160726_094131－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160726_094607－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160727_100142－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-杨树-江苏连云港市赣榆－IMG_20160727_100256－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-柳树-江苏省扬州市宝应县安宜镇纵棹园-20160726-张玉焕（2）.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）-柳树-江苏省扬州市宝应县安宜镇纵棹园-20160726-张玉焕（4）.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（危害状）泡桐 江苏省沛县刘氏会馆西门.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（卵）－樱花－江苏淮安淮城镇－20160510－赵永昂.jpg.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-山楂-江苏连云港市赣榆县沙河-20160602－陈月桂.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-杨树-江苏省扬州市宝应县夏集镇老淮江道路-20160726-张玉焕（1）.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-杨树-江苏省扬州市宝应县夏集镇老淮江道路-20160726-张玉焕（2）.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-杨树-江苏连云港市赣榆－IMG_20160608＿154647－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-杨树-江苏连云港市赣榆－IMG_20160617_152602－王丽.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-柳树-江苏省扬州市宝应县安宜镇纵棹园-20160726-张玉焕（3）.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）-柳树-江苏省扬州市宝应县安宜镇纵棹园-20160726-张玉焕（4）.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）－樱花－江苏连云港市东海县黄川－20150802－刘园园 (1).jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）－樱花－江苏连云港市东海县黄川－20150802－刘园园 (2).jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）－樱花－江苏连云港市东海县黄川－20150802－刘园园 (3).jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）－樱花－江苏连云港市东海县黄川－20150802－刘园园 (4).jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）－樱花－江苏连云港市东海县黄川－20150802－刘园园 (5).jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼虫）－江苏连云港市连云区墟沟城区－20161005_070327－张利华.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（幼）-杨树-江苏涟水前进-20160610-张洪华.png
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）-杨属-江苏连云港市赣榆县青口-20160413-陈月桂.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）-杨树-江苏涟水前进-20160502-张洪华.png
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）-杨树-江苏省淮安市淮阴区吴集镇李葛村-20160512-张丛丛.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）-杨树-江苏省淮安市盱眙县穆店乡八仙台-20160815-顾天滋.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）-杨树-江苏连云港市灌云县王集镇- 20160528- 范德芹.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）-杨树-江苏连云港市赣榆－IMG_20160502_161049－陈月桂.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）杨树-江苏省南京市江宁区禄口街道-20160823-陈宏健.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（成虫）杨树-江苏省淮安市盱眙县穆店乡八仙台-20160823-陈宏健.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（蛹）-杨树-江苏省扬州宝应西安丰镇下引河-20150806-张玉焕.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（蛹）-杨树-江苏省淮安市盱眙县穆店林场-20160328-张丛丛.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（蛹）-桑树-杨树-江苏省淮安市淮阴区吴集镇李葛村-20160328-张丛丛.JPG
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（蛹）－杨树－江苏淮安区茭陵乡－20160225－赵永昂.jpg).jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（蛹）－杨树－江苏淮安区茭陵乡－20160225－赵永昂.jpg.jpg
+错误物种编号：C22345105005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345105005\美国白蛾（雄成虫）－海棠－江苏淮安上河傎－20160415－赵永昂.jpg.JPG
+错误物种编号：C22345170045, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22345170045\人纹污灯蛾幼虫2.jpg
+错误物种编号：C22359050005, 路径 C:\Users\Owner\Desktop\Pytest\A-classifier-with-PyTorch-master\test_dataset\C22359050005\丝带凤蝶幼虫.jpg
