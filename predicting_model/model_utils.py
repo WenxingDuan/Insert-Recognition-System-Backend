@@ -24,7 +24,9 @@ def set_pretrained_model(model_name, model102=True, frozen=True):
     # Load the model
     model = getattr(models, model_name)(pretrained=True)
 
-    if (model_name == "resnet50" and model102):
+    # if (model_name == "resnet50" and model102):
+    if (False):
+
         model_dict = model.state_dict()
         # 获取resnet在102上的预训练参数
         premodel_dict = torch.load(
@@ -266,8 +268,8 @@ def predict(image_path, checkpoint, device, topk=5):
     index = probabilities.topk(topk)[1]
 
     # Convert them to list
-    probs = np.array(probs)[0]
-    index = np.array(index)[0]
+    probs = np.array(probs.cpu())[0]
+    index = np.array(index.cpu())[0]
 
     # Now get our index, class mapping from model
     class_to_idx = rebuilt_model.class_to_idx

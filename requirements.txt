@@ -1,0 +1,7 @@
+opencv-python
+matplotlib
+tensorflow
+torch
+torchvision
+flask
+flask-sqlalchemy
