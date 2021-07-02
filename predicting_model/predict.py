@@ -68,8 +68,8 @@ def findHighestVote(votingDict):
 
 
 def predict(input_image_path, topk, gpu):
-    modelPath = os.path.dirname(__file__) + "\\checkpoint_dir"
-    # mapping = os.getcwd() + "\\insertID.json"
+    modelPath = os.path.dirname(__file__) + "/checkpoint_dir"
+    # mapping = os.getcwd() + "/insertID.json"
     default_device = torch.device(
         "cuda" if torch.cuda.is_available() and gpu else "cpu")
 
@@ -79,7 +79,7 @@ def predict(input_image_path, topk, gpu):
     votingDict = {}
 
     for theModel in modelList:
-        currModelPath = modelPath + "\\" + theModel
+        currModelPath = modelPath + "/" + theModel
         # print("Using " + theModel + " to predict " + imagePath)
 
         probs, classes = mu.predict(input_image_path, currModelPath,

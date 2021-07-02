@@ -20,7 +20,7 @@ def process_arguments():
         action='store',
         dest='input_image_path',
         default=
-        'C:\\Users\\Owner\\Desktop\Pytest\\A-classifier-with-PyTorch-master\\test_dataset',
+        'C:/Users/Owner/Desktop\Pytest/A-classifier-with-PyTorch-master/test_dataset',
         help='Folder path to the input image Folder')
     '''
     -path
@@ -38,7 +38,7 @@ def process_arguments():
         action='store',
         dest='checkpoint_file_path',
         default=
-        'C:\\Users\\Owner\\Desktop\\Pytest\\A-classifier-with-PyTorch-master\\checkpoint_dir',
+        'C:/Users/Owner/Desktop/Pytest/A-classifier-with-PyTorch-master/checkpoint_dir',
         help='Folder path to the checkpoint folder to use')
     '''
     -path
@@ -135,7 +135,7 @@ def main():
     errorPaths = []
     log = open("log.txt", "w", encoding='utf-8')
     for insertClass in imagePathList:
-        currPath = input_arguments.input_image_path + "\\" + insertClass
+        currPath = input_arguments.input_image_path + "/" + insertClass
         imageList = os.listdir(currPath)
         insertName = str.lower(insertIDDict[insertClass])
 
@@ -143,12 +143,12 @@ def main():
         incurrectNum = 0
         log.write("开始预测类别: " + insertClass + "\n")
         for theImage in imageList:
-            imagePath = currPath + "\\" + theImage
+            imagePath = currPath + "/" + theImage
             votingDict = {}
             # start voting
             
             for theModel in modelList:
-                currModelPath = modelPath + "\\" + theModel
+                currModelPath = modelPath + "/" + theModel
                 print("Using " + theModel + " to predict " + imagePath)
 
                 probs, classes = mu.predict(imagePath, currModelPath,
@@ -181,7 +181,7 @@ def main():
         statistics.append([insertClass, currectNum, incurrectNum])
 
     writeStatistics(
-        "C:\\Users\\Owner\\Desktop\\Pytest\\A-classifier-with-PyTorch-master\\statistics.txt",
+        "C:/Users/Owner/Desktop/Pytest/A-classifier-with-PyTorch-master/statistics.txt",
         statistics, errorPaths)
 
 

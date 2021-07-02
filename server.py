@@ -10,14 +10,14 @@ os.system('')
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
-baseDir = os.path.abspath(os.path.dirname(__file__)) + "\\database"
+baseDir = os.path.abspath(os.path.dirname(__file__)) + "/database"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(
     baseDir, 'inserts.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
-insertList = os.listdir(os.path.dirname(__file__) + "\\static")
+insertList = os.listdir(os.path.dirname(__file__) + "/static")
 # hostname = socket.gethostname()
 # ip = socket.gethostbyname(hostname)
 
@@ -27,7 +27,7 @@ def imageList(name):
     if name not in insertList:
         return None
     else:
-        path = os.path.dirname(__file__) + "\\static\\" + name
+        path = os.path.dirname(__file__) + "/static/" + name
         imgList = os.listdir(path)
         returnJson = dict()
         returnJson["length"] = len(imgList)

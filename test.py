@@ -8,7 +8,7 @@
 # #         fd.write(chunk)
 
 # files = {
-#     'file': ('222.jpg', open("C:\\Users\\WCG\\Desktop\\Pytest\\Insert-Recognition-System-Backend\\predicting_model\\dataset\\train\\Clostera_anachoreta\\1.jpg",
+#     'file': ('222.jpg', open("C:/Users/WCG/Desktop/Pytest/Insert-Recognition-System-Backend/predicting_model/dataset/train/Clostera_anachoreta/1.jpg",
 #                            'rb'), 'image/jpg')
 # }
 # # files = {'file': "11111111"}
@@ -17,7 +17,7 @@
 # # data = {'fileName': "1.jpg", 'fileType': "jpg"}
 
 
-# # specie = pr.predict("C:\\Users\\WCG\\Desktop\\Pytest\\Insert-Recognition-System-Backend\\predicting_model\\dataset\\train\\Clostera_anachoreta\\1.jpg", 2, True)
+# # specie = pr.predict("C:/Users/WCG/Desktop/Pytest/Insert-Recognition-System-Backend/predicting_model/dataset/train/Clostera_anachoreta/1.jpg", 2, True)
 
 # # print (specie)
 
