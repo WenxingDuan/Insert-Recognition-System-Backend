@@ -31,7 +31,7 @@ def imageList(name):
         imgList = os.listdir(path)
         returnJson = dict()
         returnJson["length"] = len(imgList)
-        imgPathList = [("static\\" + name + "\\" + i) for i in imgList]
+        imgPathList = [("static/" + name + "/" + i) for i in imgList]
         returnJson["paths"] = imgPathList
         return returnJson
 
@@ -41,7 +41,7 @@ def predict():
 
     theFile = request.files.get('file')
     theName = theFile.filename
-    imgPath = os.path.dirname(__file__) + "\\storeImg\\" + theName
+    imgPath = os.path.dirname(__file__) + "/storeImg/" + theName
     theFile.save(imgPath)
     specie = pr.predict(imgPath, 2, False)
     specieJson = Insert.query.filter_by(
