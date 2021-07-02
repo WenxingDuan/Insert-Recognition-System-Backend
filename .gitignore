@@ -2,6 +2,6 @@
 /.vscode/
 /predicting_model/__pycache__/
 /predicting_model/.vscode/
-/predicting_model/dataset/
+/predicting_model/dataset/*
 *.pth
 *.v2
