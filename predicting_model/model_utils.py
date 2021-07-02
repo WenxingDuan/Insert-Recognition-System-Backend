@@ -222,7 +222,7 @@ def create_checkpoint(model,
 def load_checkpoint(checkpoint_file_path):
     ''' Load a checkpoint file and return the model
     '''
-    checkpoint = torch.load(checkpoint_file_path)
+    checkpoint = torch.load(checkpoint_file_path,map_location='cpu')
     model = getattr(models, checkpoint['model_name'])(pretrained=True)
     model.class_to_idx = checkpoint['class_to_idx']
     model.classifier = checkpoint['classifier']

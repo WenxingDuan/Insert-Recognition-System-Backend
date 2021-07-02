@@ -46,7 +46,7 @@ def predict():
     specie = pr.predict(imgPath, 2, False)
     specieJson = Insert.query.filter_by(
         latin_name="micromelalopha troglodyta").first().to_json()
-    return specieJson.replace("\'", "\"")
+    return str(specieJson).replace("\'", "\"")
 
 
 @app.route('/all', methods=['GET'])
