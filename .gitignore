@@ -4,4 +4,4 @@
 /predicting_model/.vscode/
 /predicting_model/dataset/*
 /predicting_model/checkpoint_dir/*
-*.v2
+/predicting_model/logs/*
