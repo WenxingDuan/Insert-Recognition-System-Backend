@@ -25,12 +25,12 @@ def set_pretrained_model(model_name, model102=True, frozen=True):
     model = getattr(models, model_name)(pretrained=True)
 
     # if (model_name == "resnet50" and model102):
-    if (False):
+    if (model_name == "resnet50"):
 
         model_dict = model.state_dict()
         # 获取resnet在102上的预训练参数
         premodel_dict = torch.load(
-            'C:/Users/Owner/Desktop/Pytest/A-classifier-with-PyTorch-master/resnet50_0.497.pkl'
+            'A-classifier-with-PyTorch-master/resnet50_0.497.pkl'
         )
         # 最后的fc层，ImageNet输出是1000维，102是102维，所以不加载
         premodel_dict = {

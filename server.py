@@ -6,7 +6,6 @@ import sys
 import predicting_model.predict as pr
 from database.database import db, Insert
 
-
 os.system('')
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
@@ -88,7 +87,8 @@ def edit():
         return ("Create Success")
 
     else:
-        currInsert = Insert.query.filter_by(latin_name=request.form["latin_name"]).first()
+        currInsert = Insert.query.filter_by(
+            latin_name=request.form["latin_name"]).first()
         currInsert.order = request.form["order"]
         currInsert.family = request.form["family"]
         currInsert.family_code = request.form["family_code"]
@@ -113,3 +113,21 @@ def delete(latin_name):
     except:
         return ("fail")
 
+
+@app.route('/predictPercentage', methods=['POST'])
+def predictPercentage():
+    theFile = request.files.get('file')
+    theName = theFile.filename
+    imgPath = os.path.dirname(__file__) + "/storeImg/" + theName
+    theFile.save(imgPath)
+    #TODO: finish predictPercentage method
+    #TODO: specieDict = pr.predictPercentage(imgPath, 2, False)
+    specieDict = {"anoplophora chinensis forster": 0.55, "micromelalopha troglodyta": 0.4, "Clostera anachoreta":0.05}
+    return str(specieDict)
+
+
+@app.route('/info/<latin_name>', methods=['GET'])
+def info(latin_name):
+    specieJson = Insert.query.filter_by(
+        latin_name=latin_name).first().to_json()
+    return str(specieJson).replace("\'", "\"")

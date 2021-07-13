@@ -1,49 +1,128 @@
-import requests
+from flask import request, make_response, Flask
 import os
-# import predicting_model.predict as pr
-import time
+import json
+import socket
+import sys
+import predicting_model.predict as pr
+from database.database import db, Insert
 
-url = 'http://localhost:5000/edit'
+os.system('')
+app = Flask(__name__)
+app.config["JSON_AS_ASCII"] = False
 
-# with open('123.jpg', 'wb') as fd:
-#     for chunk in r.iter_content():
-#         fd.write(chunk)
+baseDir = "database"
 
-files = {'file': ('222.jpg', open("test.jpg", 'rb'), 'image/jpg')}
-# files = {'file': "22222111"}
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(
+    baseDir, 'inserts.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
 
-# files = {'file':open('C:/Users/Owner/Desktop/Pytest/Insert-Recognition-System-Backend/testImg/1.jpg','rb')}
-# data = {'fileName': "1.jpg", 'fileType': "jpg"}
+insertList = os.listdir("static")
 
-# specie = pr.predict("C:/Users/WCG/Desktop/Pytest/Insert-Recognition-System-Backend/predicting_model/dataset/train/Clostera_anachoreta/1.jpg", 2, True)
 
-# print (specie)
+@app.route('/', methods=['GET'])
+def helloWorld():
+    return("Hello World")
 
-upJson = {
-    "order": "2212312312312312322",
-    "family": "22222",
-    "family_code": "22222",
-    "genus": "22222",
-    "genus_code": "22222",
-    "name": "22222",
-    "pest_code": "22222",
-    "latin_name": "22222",
-    "plant": "22222",
-    "area": "22222",
-    "description": "22222"
-}
-timeStart = time.time()
 
-res = requests.request("POST", url, files=files,data = upJson)
 
-timeEnd = time.time()
+@app.route('/imageList/<name>', methods=['GET'])
+def imageList(name):
+    if name not in insertList:
+        return None
+    else:
+        path = "static/" + name
+        imgList = os.listdir(path)
+        returnJson = dict()
+        returnJson["length"] = len(imgList)
+        imgPathList = [("static/" + name + "/" + i) for i in imgList]
+        returnJson["paths"] = imgPathList
+        return returnJson
 
-timeC = timeEnd - timeStart
 
-print(res.text)
-print(timeC)
+@app.route('/predict', methods=['POST'])
+def predict():
+    theFile = request.files.get('file')
+    theName = theFile.filename
+    imgPath = "storeImg/" + theName
+    theFile.save(imgPath)
+    specie = pr.predict(imgPath, 2)
+    specieJson = Insert.query.filter_by(latin_name=specie).first().to_json()
+    return str(specieJson).replace("\'", "\"")
 
-# # # print()
 
-# print(type(Insert.query.filter_by(latin_name="micromelalopha troglodyta").all()))
-# print(Insert.query.filter_by(latin_name="micromelalopha troglodyta").all().to_json())
+@app.route('/info/<specie>', methods=['GET'])
+def info(specie):
+    specie = pr.predict(imgPath, 2, False)
+    specieJson = Insert.query.filter_by(latin_name=specie).first().to_json()
+    return str(specieJson).replace("\'", "\"")
+
+
+@app.route('/all', methods=['GET'])
+def all():
+    inserts = Insert.query.all()
+    insertJsonList = []
+    for i in inserts:
+        i = i.to_json()
+        insertJsonList.append(i)
+    return str(insertJsonList).replace("\'", "\"")
+
+
+@app.route('/edit', methods=['POST'])
+def edit():
+
+    theFile = request.files.get('file')
+    theName = theFile.filename
+    imgPath = os.path.dirname(
+        __file__) + "/static/" + request.form["latin_name"] + "/" + theName
+
+    if os.path.exists("static/" + request.form["latin_name"]) == False:
+        os.makedirs("static/" + request.form["latin_name"])
+        theFile.save(imgPath)
+        currInsert = Insert(order=request.form["order"],
+                            family=request.form["family"],
+                            family_code=request.form["family_code"],
+                            genus=request.form["genus"],
+                            genus_code=request.form["genus_code"],
+                            name=request.form["name"],
+                            pest_code=request.form["pest_code"],
+                            latin_name=request.form["latin_name"],
+                            plant=request.form["plant"],
+                            area=request.form["area"],
+                            description=request.form["description"],
+                            link="static/" + request.form["latin_name"] + "/" +
+                            theName)
+        db.session.add(currInsert)
+        db.session.commit()
+        return ("Create Success")
+
+    else:
+        currInsert = Insert.query.filter_by(
+            latin_name=request.form["latin_name"]).first()
+        currInsert.order = request.form["order"]
+        currInsert.family = request.form["family"]
+        currInsert.family_code = request.form["family_code"]
+        currInsert.genus_code = request.form["genus_code"]
+        currInsert.name = request.form["name"]
+        currInsert.pest_code = request.form["pest_code"]
+        currInsert.latin_name = request.form["latin_name"]
+        currInsert.plant = request.form["plant"]
+        currInsert.area = request.form["area"]
+        currInsert.description = request.form["description"]
+        db.session.commit()
+        return ("Edit Success")
+
+
+@app.route('/delete/<latin_name>', methods=['GET'])
+def delete(latin_name):
+    try:
+        currInsert = Insert.query.filter_by(latin_name=latin_name).first()
+        db.session.delete(currInsert)
+        db.session.commit()
+        return ("success")
+    except:
+        return ("fail")
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=80)
