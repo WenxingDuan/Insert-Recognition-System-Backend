@@ -3,5 +3,5 @@
 /predicting_model/__pycache__/
 /predicting_model/.vscode/
 /predicting_model/dataset/*
-/predicting_model/checkpoint_dir/*
+/predicting_model/MODEL/*
 /predicting_model/logs/*

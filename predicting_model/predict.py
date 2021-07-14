@@ -1,50 +1,10 @@
+# -*- coding: utf-8 -*-
 import argparse
 import torch
 import os
+import sys
 from . import data_utils as du
 from . import model_utils as mu
-
-
-# Collect the input arguments
-# def process_arguments():
-#     ''' Collect the input arguments according to the syntax
-#         Return a parser with the arguments
-#     '''
-#     parser = argparse.ArgumentParser(
-#         description=
-#         'Uses a trained network to predict the input image - flower - name')
-
-#     parser.add_argument('--image',
-#                         action='store',
-#                         dest='input_image_path',
-#                         default='your_dataset/valid/5/image_05209.jpg',
-#                         help='File path to the input flower image')
-
-#     parser.add_argument('--checkpoint',
-#                         action='store',
-#                         dest='checkpoint_file_path',
-#                         default='checkpoint.pth',
-#                         help='File path to the checkpoint file to use')
-
-#     parser.add_argument('--top_k',
-#                         action='store',
-#                         dest='topk',
-#                         default=2,
-#                         type=int,
-#                         help='top K most likely classes to return')
-
-#     parser.add_argument('--mapping',
-#                         action='store',
-#                         dest='cat_name_file',
-#                         default='cat_to_name.json',
-#                         help='file for mapping of categories to real names')
-
-#     parser.add_argument('--gpu',
-#                         action='store_true',
-#                         default=False,
-#                         help='Use GPU. The default is CPU')
-
-#     return parser.parse_args()
 
 
 def findHighestProb(classes, probs):
@@ -67,57 +27,76 @@ def findHighestVote(votingDict):
     return highest
 
 
-def predict(input_image_path, topk, gpu):
-    modelPath = os.path.dirname(__file__) + "/checkpoint_dir"
-    # mapping = os.getcwd() + "/insertID.json"
-    default_device = torch.device(
-        "cuda" if torch.cuda.is_available() and gpu else "cpu")
+def predict(input_image_path, topk):
+    modelPath = os.path.dirname(__file__) + "/MODEL"
+    default_device = torch.device("cpu")
 
-    # probs, classes = mu.predict(input_image_path, checkpoint_file_path,
-    #                             default_device)
+    # print('1', file=sys.stderr)
+
     modelList = os.listdir(modelPath)
     votingDict = {}
+    # print('2', file=sys.stderr)
 
     for theModel in modelList:
         currModelPath = modelPath + "/" + theModel
-        # print("Using " + theModel + " to predict " + imagePath)
+        # print('3', file=sys.stderr)
 
         probs, classes = mu.predict(input_image_path, currModelPath,
                                     default_device, topk)
         specie = findHighestProb(classes, probs)
-        # log.write("    使用 " + theModel + " 预测 " + imagePath + "\n")
-        # log.write("        预测结果是: " + specie + "\n")
+        # print('4', file=sys.stderr)
+
         if specie in votingDict:
             votingDict[specie] = votingDict[specie] + 1
         else:
             votingDict[specie] = 1
 
     predictedSpecies = str.lower(findHighestVote(votingDict)).replace("_", " ")
+    # print('5', file=sys.stderr)
 
     return predictedSpecies
 
 
-# Get input arguments and predict a probability for the flower's name
-# def main():
-#     # Get the input arguments
-#     input_arguments = process_arguments()
+def predictPercentage(input_image_path, topk):
+    modelPath = os.path.dirname(__file__) + "/MODEL"
+    default_device = torch.device("cpu")
 
-#     # Set the device to cuda if specified
-#     default_device = torch.device(
-#         "cuda" if torch.cuda.is_available() and input_arguments.gpu else "cpu")
+    modelList = os.listdir(modelPath)
+    votingDict = {}
+    classLsit = []
+    probsList = []
+    for theModel in modelList:
+        currModelPath = modelPath + "/" + theModel
+        probs, classes = mu.predict(input_image_path, currModelPath,
+                                    default_device, topk)
+        prob_digit = [prob / sum(probs) for prob in probs]
+        classLsit = classLsit + classes
+        probsList = probsList + prob_digit
 
-#     # Predict
-#     probs, classes = mu.predict(input_arguments.input_image_path,
-#                                 input_arguments.checkpoint_file_path,
-#                                 default_device, input_arguments.topk)
+    probDict = concludeProb(classLsit, probsList, len(modelList))
 
-#     i = 0
-#     for specie in classes:
-#         print("your dataset named : " + specie +
-#               " predicted with probability: " + str(probs[i]))
-#         i += 1
+    return probDict
 
-#     pass
 
-# if __name__ == '__main__':
-#     main()
+def concludeProb(classLsit, probsList, modelNumber):
+    index = 0
+    probDict = {}
+    for insert in classLsit:
+        if insert in probDict.keys():
+            probDict[insert] = probDict[insert] + probsList[index]
+        else:
+            probDict[insert] = probsList[index]
+        index += 1
+    for insert in probDict.keys():
+        probDict[insert] = probDict[insert] / modelNumber
+
+    sorted_prob = sorted(probDict.items(),
+                         key=lambda kv: (kv[1], kv[0]),
+                         reverse=True)
+    returnJson = []
+    for i in sorted_prob:
+        tempDict = {}
+        tempDict["latin_name"] = i[0].replace("_", " ")
+        tempDict["percentage"] = round(i[1], 4)
+        returnJson.append(tempDict)
+    return returnJson

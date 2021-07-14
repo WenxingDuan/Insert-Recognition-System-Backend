@@ -10,14 +10,14 @@ os.system('')
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
-baseDir = os.path.abspath(os.path.dirname(__file__)) + "/database"
+baseDir = "database"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(
     baseDir, 'inserts.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
-insertList = os.listdir(os.path.dirname(__file__) + "/static")
+insertList = os.listdir("static")
 
 
 @app.route('/imageList/<name>', methods=['GET'])
@@ -25,7 +25,7 @@ def imageList(name):
     if name not in insertList:
         return None
     else:
-        path = os.path.dirname(__file__) + "/static/" + name
+        path = "static/" + name
         imgList = os.listdir(path)
         returnJson = dict()
         returnJson["length"] = len(imgList)
@@ -38,11 +38,13 @@ def imageList(name):
 def predict():
     theFile = request.files.get('file')
     theName = theFile.filename
-    imgPath = os.path.dirname(__file__) + "/storeImg/" + theName
+    imgPath = "storeImg/" + theName
     theFile.save(imgPath)
-    specie = pr.predict(imgPath, 2, False)
+    specie = pr.predict(imgPath, 2)
+    print('6', file=sys.stderr)
     specieJson = Insert.query.filter_by(
         latin_name="micromelalopha troglodyta").first().to_json()
+    print('7', file=sys.stderr)
     return str(specieJson).replace("\'", "\"")
 
 
@@ -64,9 +66,7 @@ def edit():
     imgPath = os.path.dirname(
         __file__) + "/static/" + request.form["latin_name"] + "/" + theName
 
-    if os.path.exists(
-            os.path.dirname(__file__) + "/static/" +
-            request.form["latin_name"]) == False:
+    if os.path.exists("static/" + request.form["latin_name"]) == False:
         os.makedirs("static/" + request.form["latin_name"])
         theFile.save(imgPath)
         currInsert = Insert(order=request.form["order"],
@@ -118,11 +118,10 @@ def delete(latin_name):
 def predictPercentage():
     theFile = request.files.get('file')
     theName = theFile.filename
-    imgPath = os.path.dirname(__file__) + "/storeImg/" + theName
+    imgPath = "storeImg/" + theName
     theFile.save(imgPath)
     #TODO: finish predictPercentage method
-    #TODO: specieDict = pr.predictPercentage(imgPath, 2, False)
-    specieDict = {"anoplophora chinensis forster": 0.55, "micromelalopha troglodyta": 0.4, "Clostera anachoreta":0.05}
+    specieDict = pr.predictPercentage(imgPath, 2)
     return str(specieDict)
 
 
@@ -131,3 +130,7 @@ def info(latin_name):
     specieJson = Insert.query.filter_by(
         latin_name=latin_name).first().to_json()
     return str(specieJson).replace("\'", "\"")
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
