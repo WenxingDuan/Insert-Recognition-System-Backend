@@ -268,8 +268,8 @@ def predict(image_path, checkpoint, device, topk=5):
     index = probabilities.topk(topk)[1]
 
     # Convert them to list
-    probs = np.array(probs.cpu())[0]
-    index = np.array(index.cpu())[0]
+    probs = np.array(probs)[0]
+    index = np.array(index)[0]
 
     # Now get our index, class mapping from model
     class_to_idx = rebuilt_model.class_to_idx

@@ -42,8 +42,7 @@ def predict():
     theFile.save(imgPath)
     specie = pr.predict(imgPath, 2)
     print('6', file=sys.stderr)
-    specieJson = Insert.query.filter_by(
-        latin_name="micromelalopha troglodyta").first().to_json()
+    specieJson = Insert.query.filter_by(latin_name=specie).first().to_json()
     print('7', file=sys.stderr)
     return str(specieJson).replace("\'", "\"")
 
@@ -122,7 +121,7 @@ def predictPercentage():
     theFile.save(imgPath)
     #TODO: finish predictPercentage method
     specieDict = pr.predictPercentage(imgPath, 2)
-    return str(specieDict)
+    return str(specieDict).replace("\'", "\"")
 
 
 @app.route('/info/<latin_name>', methods=['GET'])

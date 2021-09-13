@@ -59,7 +59,7 @@ def predict(input_image_path, topk):
 
 def predictPercentage(input_image_path, topk):
     modelPath = os.path.dirname(__file__) + "/MODEL"
-    default_device = torch.device("cpu")
+    default_device = torch.device("cuda")
 
     modelList = os.listdir(modelPath)
     votingDict = {}

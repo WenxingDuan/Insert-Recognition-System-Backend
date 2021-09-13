@@ -1,9 +1,9 @@
 import requests
 import os
-import predicting_model.predict as pr
+# import predicting_model.predict as pr
 import time
 
-# url = 'http://101.37.124.181/predict'
+url = 'http://q27g2.natapp1.cc/predictPercentage'
 
 # with open('123.jpg', 'wb') as fd:
 #     for chunk in r.iter_content():
@@ -12,12 +12,12 @@ import time
 # files = {'file': ('222.jpg', open("test.jpg", 'rb'), 'image/jpg')}
 # files = {'file': "22222111"}
 
-# files = {'file':open('static/Anoplophora chinensis Forster/1 (1).jpg','rb')}
+files = {'file':open('static/Anoplophora chinensis Forster/1 (1).jpg','rb')}
 # data = {'fileName': "1.jpg", 'fileType': "jpg"}
 
-specie = pr.predictPercentage("C:/Users/WCG/Desktop/Pytest/Insert-Recognition-System-Backend/static/Anoplophora chinensis Forster/1 (1).jpg", 2)
+# specie = pr.predictPercentage("C:/Users/WCG/Desktop/Pytest/Insert-Recognition-System-Backend/static/Anoplophora chinensis Forster/1 (1).jpg", 2)
 
-print (specie)
+# print (specie)
 
 # upJson = {
 #     "order": "2212312312312312322",
@@ -34,8 +34,8 @@ print (specie)
 # }
 # timeStart = time.time()
 
-# res = requests.request("POST", url, files=files)
-# print(res.text)
+res = requests.request("POST", url, files=files)
+print(res.text)
 
 # timeEnd = time.time()
 
